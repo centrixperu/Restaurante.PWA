@@ -7,6 +7,9 @@ import { SharedModule } from './shared/shared.module';
 
 import { AuthJWTInterceptor } from '../app/core/interceptor/auth-jwt.interceptor';
 import { AuthGuard } from './core/guards/auth.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +17,11 @@ import { AuthGuard } from './core/guards/auth.guard';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbEvaIconsModule
   ],
   providers: [
     // { provide: APP_BASE_HREF, useValue: '/' },
