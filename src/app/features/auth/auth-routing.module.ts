@@ -9,6 +9,11 @@ const routes: Routes = [{
   pathMatch: 'full'
 },
 {
+  path: 'login',
+  redirectTo: 'auth',
+  pathMatch: 'full'
+},
+{
   path: 'auth',
   children: [
     {

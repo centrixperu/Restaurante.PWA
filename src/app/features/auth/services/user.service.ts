@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { AppConstants } from 'src/app/core/data/app-constants';
 import { UserData } from 'src/app/core/data/user';
 import { Usuario } from 'src/app/core/models/usuario.model';
+import { ApiService } from 'src/app/core/services/api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,16 +14,18 @@ export class UserService extends UserData  {
     authAppToken = JSON.parse(localStorage.getItem(AppConstants.LocalStorage.NebularToken));
     if (authAppToken == null || authAppToken == undefined) {
       return false;
-    } else {
+    } 
+    else {
       if (authAppToken.value.length == 0) {
         return false;
-      } else {
+      } 
+      else {
         return true;
       }
     }
 
   }
-  constructor() { 
+  constructor(private apiService: ApiService, private toastr: ToastrService) { 
     super();
   }
   setToken(token: string) {

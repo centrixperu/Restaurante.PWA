@@ -1,6 +1,6 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedRoutingModule } from './shared-routing.module';
+import { ToastrModule } from 'ngx-toastr';
 import {
   NbTabsetModule,
   NbMenuModule,
@@ -39,7 +39,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   declarations: [],
   imports: [
     CommonModule,
-    SharedRoutingModule,
     NbIconModule,
     NbThemeModule,
     NbSecurityModule,
@@ -50,6 +49,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NbTabsetModule,
     NbTooltipModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      preventDuplicates: true,
+    }),
   ]
 })
 export class SharedModule { 
