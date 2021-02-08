@@ -1,19 +1,32 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AuthRoutingModule } from './auth-routing.module';
-import { LoginComponent } from './components/login/login.component';
-import { LogoutComponent } from './components/logout/logout.component';
-import { AuthComponent } from './auth.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { NbButtonModule, NbCardModule, NbCheckboxModule, NbInputModule } from '@nebular/theme';
-import { NbAuthJWTToken, NbAuthModule, NbPasswordAuthStrategy } from '@nebular/auth';
 import { environment } from 'src/environments/environment';
 
+import { AuthRoutingModule } from './auth-routing.module';
+import { AuthComponent } from './auth.component';
+
+import { LoginComponent } from './components/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
+
+import { NbPasswordAuthStrategy, NbAuthModule,NbAuthJWTToken } from '@nebular/auth';
+import {
+  NbAlertModule,
+  NbButtonModule,
+  NbCheckboxModule,
+  NbInputModule,
+  NbCardModule
+} from '@nebular/theme';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 
 @NgModule({
-  declarations: [LoginComponent, LogoutComponent, AuthComponent],
+  declarations: [LoginComponent, LogoutComponent, AuthComponent, SignInComponent, SignUpComponent, CarouselComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -24,6 +37,8 @@ import { environment } from 'src/environments/environment';
     NbButtonModule,
     NbCheckboxModule,
     AuthRoutingModule,
+    NgbModule,
+    ShowHidePasswordModule,
     NbAuthModule.forRoot({
       strategies: [
         NbPasswordAuthStrategy.setup({

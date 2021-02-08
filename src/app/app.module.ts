@@ -8,7 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { AuthJWTInterceptor } from '../app/core/interceptor/auth-jwt.interceptor';
 import { AuthGuard } from './core/guards/auth.guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbCheckboxModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NB_AUTH_TOKEN_INTERCEPTOR_FILTER } from '@nebular/auth';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -23,6 +23,7 @@ import {
 } from '@nebular/theme';
 import localeEsPE from '@angular/common/locales/es-PE';
 import { AuthModule } from './features/auth/auth.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 registerLocaleData(localeEsPE, 'es-Pe');
 
 const NB_MODULES = [
@@ -31,6 +32,7 @@ const NB_MODULES = [
   NbDialogModule.forRoot(),
   NbDialogModule,
   NbWindowModule,
+  NbCheckboxModule
 ];
 @NgModule({
   declarations: [
@@ -48,6 +50,7 @@ const NB_MODULES = [
     AuthModule,
     AppRoutingModule,
     NbToastrModule.forRoot(),
+    NgbModule,
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },

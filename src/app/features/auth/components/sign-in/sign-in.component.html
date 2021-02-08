@@ -1,0 +1,53 @@
+<div class="col-sm-12 h-100 d-table">
+    <div class="d-table-cell align-middle">
+        <div class="row">
+            <h2 class="col-sm-12 text-center">Inicio de Sesión</h2>
+            <div class="space-80"></div>
+            <div class="text-center form-align-center">
+                <form (ngSubmit)="form.valid && login()" #form="ngForm" aria-labelledby="title" novalidate>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend custom-awesome-container">
+                            <span class="input-group-text"><i class="fa fa-user custom-awesome"></i></span>
+                        </div>
+                        <!-- <input maxlength="80" nbInput  [(ngModel)]="user.username" class="form-control" #username="ngModel" name="username" id="input-email"
+                        placeholder="Usuario" autofocus required> -->
+                        <input maxlength="80" nbInput  class="form-control" name="username" id="input-email"
+                        placeholder="Usuario" autofocus required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <show-hide-password [btnOutline]="false">
+                            <div class="input-group-prepend custom-awesome-container">
+                                <span class="input-group-text"><i class="fa fa-envelope custom-awesome"></i></span>
+                            </div>
+                            <!-- <input maxlength="100" nbInput  [(ngModel)]="user.password" class="form-control" #password="ngModel" name="password" type="password"
+                            id="input-password" placeholder="Contraseña" required> -->
+                            <input maxlength="20" nbInput  class="form-control" name="password" type="password"
+                            id="input-password" placeholder="Contraseña" required>
+                        </show-hide-password>
+                    </div>
+                    <div class="space-20"></div>
+                    <div class="row">
+                        <div class="col align-self-start">
+                            <div class="form-check float-right">
+                                <label class="container"> 
+                                    <input type="checkbox" [(ngModel)]="theCheckbox"  data-md-icheck (change)="toggleVisibility($event)"/>
+                                        Recordar contraseña
+                                      <span class="checkmark"></span>
+                                    </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-20"></div>
+                    <div class="form-control-group">
+                        <button class="btn-custom" nbButton fullWidth status="success" [disabled]="!form.valid || (form.valid && loadingSociedad)"
+                          [class.btn-pulse]="submitted">
+                          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                          Ingresar
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+  </div>

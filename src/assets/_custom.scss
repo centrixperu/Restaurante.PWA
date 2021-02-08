@@ -1,0 +1,91 @@
+.cdk-global-scrollblock {
+  position: static !important;
+}
+
+.ngx-show-hide-password .btn-secondary {
+  position: absolute;
+  color: nb-theme(color-app-fondo) !important;
+  background-color: transparent;
+  border: none;
+  border: 0;
+  z-index: 1000 !important;
+  margin-left: -50px;
+}
+
+.ngx-show-hide-password .btn-secondary:hover {
+  color: nb-theme(color-app-fondo) !important;
+  background-color: transparent;
+  border: none;
+}
+
+.ngx-show-hide-password .btn-secondary:focus {
+  color: nb-theme(color-app-fondo) !important;
+  background-color: transparent;
+  border: none;
+  box-shadow: none !important;
+}
+.btn-secondary:not(:disabled):not(.disabled):active,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.show > .btn-secondary.dropdown-toggle {
+  background-color: transparent !important;
+  color:nb-theme(color-app-fondo) !important;
+}
+
+
+.btn-secondary:focus,
+.btn-secondary.focus {
+  color: nb-theme(color-app-fondo) !important;
+  background-color: transparent;
+  box-shadow: none !important;
+}
+
+@mixin nb-custom {
+  .form-control:focus {
+    border-color: nb-theme(color-app-fondo) !important;
+    box-shadow: 0 0 0 0.2rem rgba(251, 189, 0, 0.25) !important;
+  }
+  .form-control:hover {
+    border-color: nb-theme(color-app-fondo) !important;
+  }
+  // ipad
+  @media only screen and (min-width: 1024px) {
+    nb-user.size-large {
+      margin-top: 10px;
+    }
+    nb-user.size-large .user-name {
+      font-size: 0.6rem;
+      line-height: 1rem;
+    }
+    nb-user.size-large .user-title {
+      font-size: 0.6rem;
+    }
+  }
+
+  //laptop
+  @media only screen and (min-width: 1200px) {
+    nb-user.size-large {
+      margin-top: 0px;
+    }
+    nb-user.size-large .user-name {
+      font-size: 0.8125rem;
+      line-height: 1.25rem;
+    }
+    nb-user.size-large .user-title {
+      font-size: 0.8125rem;
+    }
+  }
+
+  //destkop
+  @media only screen and (min-width: 1600px) {
+    nb-user.size-large {
+      margin-top: 0px;
+    }
+    nb-user.size-large .user-name {
+      font-size: 0.8125rem;
+      line-height: 1.25rem;
+    }
+    nb-user.size-large .user-title {
+      font-size: 0.8125rem;
+    }
+  }
+}

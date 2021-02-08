@@ -1,0 +1,26 @@
+// @nebular theming framework
+@import '~@nebular/theme/styles/theming';
+// @nebular out of the box themes
+@import '~@nebular/theme/styles/themes';
+
+
+$nb-themes: nb-register-theme((
+
+), default, default);
+
+$nb-themes: nb-register-theme((
+  layout-padding-top: 2.25rem,
+  color-app-fondo:#0c1c7b,
+  color-app-fondo-hover: #ced4da,
+  color-app-fondo-focus: #ced4da,
+  color-app-border-focus: #ced4da,
+  color-app-shadow-focus: 0 0 0 0.2rem rgba(0, 123, 255, 0.25),
+  color-app-input-group-text: #e9ecef,
+  color-app-texto:black,
+  color-app-border-color:#0c1c7b,
+  color-border-radius: 0.9rem,
+  tamanio_letra: 0.7rem,
+  tamanio_letra_subtitulo: 0.8rem
+), restaurante, default);
+
+
