@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SignInComponent implements OnInit {
   marked = false;
   theCheckbox = false;
+  loading:boolean = false;
   constructor() { }
 
   ngOnInit(): void {

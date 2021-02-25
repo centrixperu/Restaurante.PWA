@@ -5,3 +5,17 @@
 .custom-sign{
   background-color: #f9f9f9;
 }
+.desktop-style{
+  display: none;
+}
+.mobile-style{
+  display: none;
+}
+@media only screen and (max-width:950px) {
+  .desktop-style{
+    display: block;
+  }
+  .mobile-style{
+    display: none;
+  }
+}
